@@ -61,22 +61,10 @@ public class Assignment10Part1 {
         }
     }
 
-    private static void specialConditionsForBrackets(Stack<Double> stackOfNumbers, Stack<String> stackOfOperators) {
-        stackOfOperators.pop();
-        while (!stackOfOperators.peek().equals("(")) {
-            stackOfNumbers.push(operateTwoNumbers(stackOfOperators.pop(), stackOfNumbers.pop(), stackOfNumbers.pop()));
-        }
-        stackOfOperators.pop();
-    }
-
     private static void emptyLeftOperators(Stack<String> stackOfOperators, Stack<Double> stackOfNumbers) {
-        if (stackOfOperators.peek().equals(")")) {
-            specialConditionsForBrackets(stackOfNumbers, stackOfOperators);
-        }else {
             while (!stackOfOperators.isEmpty()) {
                 stackOfNumbers.push(operateTwoNumbers(stackOfOperators.pop(), stackOfNumbers.pop(), stackOfNumbers.pop()));
             }
-        }
     }
 
     private static double operateTwoNumbers(String symbol, double num2, double num1) {
@@ -102,4 +90,5 @@ public class Assignment10Part1 {
     }
 
 }
+
 
