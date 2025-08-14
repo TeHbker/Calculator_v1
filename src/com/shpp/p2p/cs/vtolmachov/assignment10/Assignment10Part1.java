@@ -69,7 +69,7 @@ public class Assignment10Part1 {
 
     private static void emptyLeftOperators(Stack<String> stackOfOperators, Stack<Double> stackOfNumbers) {
         while (!stackOfOperators.isEmpty()) {
-            if(stackOfOperators.peek().equals("(")){
+            if (stackOfOperators.peek().equals("(")) {
                 break;
             }
             stackOfNumbers.push(operateTwoNumbers(stackOfOperators.pop(), stackOfNumbers.pop(), stackOfNumbers.pop()));
