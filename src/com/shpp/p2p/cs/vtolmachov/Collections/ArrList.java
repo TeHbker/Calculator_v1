@@ -33,9 +33,12 @@ public class ArrList<E>{
 
     public void remove(int i){
         for(; i < size; i++){
-            array[i] = array[i + 1];
+            if(i != size-1){
+               array[i] = array[i + 1];
+            }
         }
         array[size - 1] = null;
         size--;
     }
 }
+
